@@ -9,10 +9,22 @@
       <dd><%= @casting.character %></dd>
 
       <dt>Movie</dt>
-      <dd><%= @casting.movie_id %></dd>
+      <dd>
+        <% if @casting.movie.present? %>
+          <a href="/directors/<%= @casting.movie_id %>">
+            <%= @casting.movie.bio %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Actor</dt>
-      <dd><%= @casting.actor_id %></dd>
+      <dd>
+        <% if @casting.actor.present? %>
+          <a href="/actors/<%= @casting.actor_id %>">
+            <%= @casting.actor.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
